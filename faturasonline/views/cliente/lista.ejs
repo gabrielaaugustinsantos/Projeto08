@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<title>Organizações Tabajara</title>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<h1>Lista de Clientes</h1>
+		<hr>
+		
+		<a href="/formCliente">Novo Cliente</a> &nbsp;
+		<a href="/">Voltar para Tela Principal</a>
+		<table border="1">
+			<tr>
+				<th>CPF</th>
+				<th>Nome</th>
+				<th>Telefone</th>
+				<th>Endereço</th>
+			</tr>
+	        <% clientes.forEach((c, index) => { %>
+			<tr>
+				<td><%= c.cpf %></td>
+				<td><%= c.nome %></td>
+				<td><%= c.telefone %></td>
+				<td><%= c.endereco %></td>
+			</tr>
+			<% }) %>
+		</table>
+	</body>
+</html>

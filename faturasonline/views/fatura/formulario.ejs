@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<title>Exercício 04</title>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<h1>Fatura de Serviços de Telecomunicações</h1>
+		<hr>
+		<form action="/salvarFatura" method="post">
+			<label for="cpf">Cliente:</label><br>
+			<select name="cpf" id="cpf">
+				<% clientes.forEach((c, index) => { %>
+
+					<option value="<%= c.cpf %>">
+						<%= c.nome %>
+					</option>
+
+				<% }) %>
+			</select><br><br>
+					
+			<label for="id_servico">Serviço:</label><br>
+			<select name="id_servico" id="id_servico">
+				<% servicos.forEach((s, index) => { %>
+
+					<option value="<%= s.id %>">
+						<%= s.descricao %>
+					</option>
+
+				<% }) %>
+			</select><br><br>
+				
+			<label for="data_emissao">Data de Emissão:</label><br>
+			<input type="date" name="data_emissao" id="data_emissao" size="20"><br><br>
+			
+			<label for="data_vencimento">Data de Vencimento:</label><br>
+			<input type="date" name="data_vencimento" id="data_vencimento" size="20"><br><br>
+			
+			<input type="submit" name="salvar" value="Salvar Fatura">
+			<input type="reset" name="limpar" value="Limpar">
+		</form>
+	</body>
+</html>

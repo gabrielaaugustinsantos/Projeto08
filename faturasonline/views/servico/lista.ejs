@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<title>Organizações Tabajara</title>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<h1>Lista de Serviços</h1>
+		<hr>
+		
+		<a href="/formServico">Novo Serviço</a> &nbsp;
+		<a href="/">Voltar para Tela Principal</a>
+		<table border="1">
+			<tr>
+				<th>ID</th>
+				<th>Descrição</th>
+				<th>Tipo de Serviço</th>
+				<th>Tempo de Realização</th>
+				<th>Data de Realização</th>
+				<th>Valor da Hora</th>
+			</tr>
+	        <% servicos.forEach((s, index) => { %>
+			<tr>
+				<td><%= s.id %></td>
+				<td><%= s.descricao %></td>
+				<td><%= s.tipo_servico %></td>
+				<td><%= s.tempo_realizacao %></td>
+				<td><%= s.data_realizacao %></td>
+				<td><%= s.valor_hora %></td>
+			</tr>
+			<% }) %>
+		</table>
+	</body>
+</html>

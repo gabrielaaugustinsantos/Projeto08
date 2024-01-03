@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<title>Organizações Tabajara</title>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<h1>Lista de Faturas</h1>
+		<hr>
+		
+		<a href="/formFartura">Nova Fatura</a> &nbsp;
+		<a href="/">Voltar para Tela Principal</a>
+		<table border="1">
+			<tr>
+				<th>Número</th>
+				<th>Cliente</th>
+				<th>Serviço</th>
+				<th>Data de Emissão</th>
+                <th>Data de Vencimento</th>
+                <th>Valor Total</th>
+			</tr>
+	        <% faturas.forEach((f, index) => { %>
+			<tr>
+				<td><%= f.id %></td>
+				<td><%= f.nome %></td>
+				<td><%= f.descricao %></td>
+				<td><%= f.data_emissao %></td>
+                <td><%= f.data_vencimento %></td>
+                <td><%= f.valor_total %></td>
+			</tr>
+			<% }) %>
+		</table>
+	</body>
+</html>

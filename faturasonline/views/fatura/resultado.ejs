@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <title>Exercício 04</title>
+    <meta charset="UTF-8">
+	<link href="estilos.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+	<div id="quadro">
+		<div id="cabecalho">
+			<img src="tabajara.jpg" align="left" width="150" style="padding-top: 10px; padding-left: 10px;">
+			<h1 align="center">Fatura Online</h1>
+		</div>
+		<div id="corpo">
+			<p style="color: #000000; font-weight: bold;">Dados do Cliente</p>
+			<ul>
+				<li>CPF: <%= param.cli.cpf %></li>
+				<li>Nome: <%= param.cli.nome %></li>
+				<li>Telefone: <%= param.cli.telefone %></li>
+				<li>Endereço: <%= param.cli.endereco %></li>
+			</ul>
+			
+			<table border="1" cellpadding="5" cellspacing="0" style="border-color: #000000" width="95%">
+				<caption style="color: #000000; font-weight: bold;">Dados do Serviço</caption>
+				<tr align="center">
+					<th width="10%">Id</th>
+					<th width="40%">Descrição</th>
+					<th width="20%">Data de Realização</th>
+					<th width="10%">Tipo de Serviço</th>
+					<th width="10%">Tempo</th>
+					<th width="10%">Valor Unitário</th>
+				</tr>
+				<tr>
+					<td><%= param.serv.id %></td>
+					<td><%= param.serv.descricao %></td>
+					<td><%= param.serv.dataRealizacao %></td>
+					<td><%= param.serv.tipoServico %></td>
+					<td><%= param.serv.tempoRealizacao %></td>
+					<td>R$ <%= param.serv.valorHora %></td>
+				</tr>
+			</table>
+		</div>
+		<div id="rodape">
+			<ul class="totais">
+				<li>Emissão: <%= param.dataEmissao %></li>
+				<li>Vencimento: <%= param.dataVencimento %></li>
+				<li>Total: R$ <%= param.valorTotal %></li>
+				<li>Valor do ICMS: R$ <%= param.valorIcms %></li>
+			</ul>
+		</div>
+	</div>
+	<a href="/faturas">Voltar para Lista de Faturas</a>
+  </body>
+</html>
